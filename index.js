@@ -19,7 +19,7 @@ app.get('/products/:productId', async (req, res) => {
     const { api_key } = req.query;
 
     try {
-        const response = await request(`${generateScraperUrl(api_key)}&url=https://www.amazon.in/dp/${productId}`);
+        const response = await request(`${generateScraperUrl(api_key)}&url=https://www.amazon.com/dp/${productId}`);
 
         res.json(JSON.parse(response));
     } catch (error) {
